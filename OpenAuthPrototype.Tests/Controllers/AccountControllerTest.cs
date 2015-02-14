@@ -21,13 +21,13 @@ namespace OpenAuthPrototype.Tests.Controllers
 
             // Act
             ViewResult result = controller.Login("test") as ViewResult;
-
+            
             // Assert
             Assert.IsNotNull(result);
         }
 
         [TestMethod]
-        public void LoginShouldFail()
+        public void LoginCredentials()
         {
             // Arrange
             AccountController controller = new AccountController();
@@ -37,14 +37,42 @@ namespace OpenAuthPrototype.Tests.Controllers
             loginViewModel.Email = "test@test.com";
             loginViewModel.Password = "Test";
             loginViewModel.RememberMe = true;
+            
             // Act
             Task<ActionResult> actionResult = controller.Login(loginViewModel, "testUrl");
-            actionResult.Wait();
             // Assert
             Assert.IsNotNull(actionResult);
+        }
 
-            Assert.AreEqual(SignInStatus.Failure, actionResult.Status);
+        [TestMethod]
+        public void RegisterRender()
+        {
+            // Arrange
+            AccountController controller = new AccountController();
 
+            // Act
+            ViewResult result = controller.Register() as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void RegisterNewUser()
+        {
+            // Arrange
+            AccountController controller = new AccountController();
+
+            //Create a mockup login view model
+            RegisterViewModel registerViewModel = new RegisterViewModel();
+            registerViewModel.Email = "test@test.com";
+            registerViewModel.Password = "Test";
+            registerViewModel.ConfirmPassword = "Test";
+
+            // Act
+            Task<ActionResult> actionResult = controller.Register(registerViewModel);
+            // Assert
+            Assert.IsNotNull(actionResult);
         }
     }
 }
