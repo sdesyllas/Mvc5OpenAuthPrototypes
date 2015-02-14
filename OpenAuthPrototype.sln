@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenAuthPrototype", "OpenAuthPrototype\OpenAuthPrototype.csproj", "{46670A86-B633-45BC-9F71-240A36E5CDCE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenAuthPrototype.Tests", "C:\Users\Spyros\Documents\Visual Studio 2013\Projects\OpenAuthPrototype\OpenAuthPrototype.Tests\OpenAuthPrototype.Tests.csproj", "{3C14D861-01D0-4DC3-BA7B-D67C5B58D282}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenAuthPrototype.Tests", "OpenAuthPrototype.Tests\OpenAuthPrototype.Tests.csproj", "{3C14D861-01D0-4DC3-BA7B-D67C5B58D282}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
