@@ -1,0 +1,28 @@
+﻿<script>
+    var uri = 'api/Achievements';
+
+    $(document).ready(function () {
+        $('.indicator').show();
+        // Send an AJAX request
+        $.getJSON(uri)
+            .done(function(data) {
+                // On success, 'data' contains a list of products.
+                $.each(data, function(key, item) {
+                    // Add a list item for the product.
+                    $('<li>', { text: formatItem(item) }).appendTo($('#posts'));
+                });
+                $('.indicator').hide();
+            });
+    });
+
+    function formatItem(item) {
+        return item.Title + ' : ' + item.Description + ' Created at ' + item.DateCreated + ' by ' + item.UserEmail;
+    }
+
+
+</script>
+
+<span class="indicator"><img src="/Content/images/ajax-loader.gif"/></span>
+<ul id="posts">
+ 
+</ul>
